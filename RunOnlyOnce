@@ -1,0 +1,9 @@
+boolean firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true);
+    if (firstrun){
+        //... Display the dialog message here ...
+        // Save the state
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+            .edit()
+            .putBoolean("firstrun", false)
+            .commit();
+    }
