@@ -1,0 +1,7 @@
+LocationTracker.getInstance(requireContext())!!.connectToLocation(object :
+            LocationTracker.OnLocationUpdateListener {
+            override fun onUpdate(lat: Double, lon: Double) {
+                Log.d(TAG, "onUpdate: lat: $lat ---- lon: $lon")
+                latLng = LatLng(lat, lon)
+            }
+        })
